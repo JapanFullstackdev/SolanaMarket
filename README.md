@@ -3,7 +3,7 @@
 🇯🇵 [日本語](README.md) | 🇺🇸 [英語](README.en.md)
 
 ## 仕組み
-![](./how_it_works_jp.png)
+![](how_it_works.png)
 
 ## 開発環境のセットアップ
 

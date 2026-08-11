@@ -3,7 +3,7 @@
 🇯🇵 [日本語](README.md) | 🇺🇸 [English](README.en.md)
 
 ## How it Works
-![](./how_it_works.jpg)
+![](how_it_works.jpg)
 
 ## Development Setup
 
