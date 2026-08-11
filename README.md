@@ -1,69 +1,82 @@
-# Solana NFT Marketplace
+# Solana NFTマーケットプレイス
 
-## How it Works
-![](how_it_works.jpg)
+🇯🇵 [日本語](README.md) | 🇺🇸 [英語](README.en.md)
 
-## Development Setup
+## 仕組み
+![](how_it_works_jp.png)
 
-### Node JS, NPM, & Yarn
-Install `nodejs` & `npm` using the recommended method for your operating system. For many Linux distributions - including WSL2 on Windows - it's recommended to use [nvm](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).   
-   
-Next, install `yarn`:
-```shell
+## 開発環境のセットアップ
+
+### Node.js、npm、Yarn
+お使いのオペレーティングシステムに適した方法で`nodejs`と`npm`をインストールしてください。Windows上のWSL2を含む多くのLinuxディストリビューションでは、[nvm](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl)の使用が推奨されています。
+
+
+次に、`yarn`をインストールします。
+```
+shell
 npm install -g yarn
 ```
 
 ### Rust
-Install `rust`, `cargo`, and many other required libraries:
-```shell
+`rust`、`cargo`、その他必要なライブラリをインストールします。
+```
+shell
 curl https://sh.rustup.rs -sSf | sh
 ```
 >[!NOTE]
-> This is for Linux & MacOS. For **Windows**, check out the [original site](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+> これはLinuxとmacOS向けです。**Windows**の場合は、[公式サイト](https://doc.rust-lang.org/cargo/getting-started/installation.html)を参照してください。
 
 ### Solana
-```shell
+```
+shell
 sh -c "$(curl -sSfL https://release.solana.com/v1.10.25/install)"
 ```
 >[!NOTE]
-> This is for Linux & MacOS. For **Windows**, check out the [original site](https://docs.solana.com/cli/install-solana-cli-tools).
+> これはLinuxとmacOS向けです。 Windows の場合は、[オリジナルサイト](https://docs.solana.com/cli/install-solana-cli-tools) を参照してください。
 
 ### Anchor CLI
-```shell
+```
+shell
 npm install -g @project-serum/anchor-cli
 ```
 
 ### Candy Machine
-Ensure you have `yarn` installed. Install the Metaplex CLI:
-```shell
+`yarn` がインストールされていることを確認してください。 Metaplex CLI をインストールします。
+```
+shell
 git clone https://github.com/metaplex-foundation/metaplex.git ~/metaplex
 yarn install --cwd ~/metaplex/js/
 ```
-Verify it was installed correctly:
-```shell
+正しくインストールされたことを確認します。
+```
+shell
 ts-node ~/metaplex/js/packages/cli/src/candy-machine-v2-cli.ts --version
 ```
 
-## Using this Repository
-### Run client
-```shell
+## このリポジトリを使用する
+### クライアントを実行する
+```
+shell
 anchor run test
 ```
-OR
-```shell
+または
+```
+shell
 docker-compose up
 ```
-### Deploy Program
-```shell
+### プログラムをデプロイする
+```
+shell
 anchor build
 anchor deploy
 ```
-OR
-```shell
+または
+```
+shell
 docker-compose run program "anchor build && anchor deploy"
 ```
 
-## Working with an Imported IDL
-If you're using the [Solana Playground IDE](https://beta.solpg.io), you can import your Solana program's IDL by building it, selecting `Extra -> IDL` from the drop-down, clicking `Export`, then dropping your json file in the `solpg` folder.   
-   
-Then just un-comment the necessary code in either `api/src/service.ts` or `tests/nft-marketplace.ts`.
+## インポートした IDL を使用する
+[Solana Playground を使用している場合] IDE（https://beta.solpg.io）では、SolanaプログラムのIDLをインポートするには、プログラムをビルドし、ドロップダウンメニューから「Extra」→「IDL」を選択し、「Export」をクリックして、生成されたjsonファイルを「solpg」フォルダにドロップします。
+
+その後、`api/src/service.ts`または`tests/nft-marketplace.ts`内の必要なコードのコメントを解除してください。
