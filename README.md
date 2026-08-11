@@ -77,6 +77,6 @@ docker-compose run program "anchor build && anchor deploy"
 ```
 
 ## インポートした IDL を使用する
-[Solana Playground IDE](https://beta.solpg.io） を使用している場合 では、SolanaプログラムのIDLをインポートするには、プログラムをビルドし、ドロップダウンメニューから「Extra」→「IDL」を選択し、「Export」をクリックして、生成されたjsonファイルを「solpg」フォルダにドロップします。
+[Solana Playground IDE](https://beta.solpg.io), を使用している場合 では、SolanaプログラムのIDLをインポートするには、プログラムをビルドし、ドロップダウンメニューから「Extra」→「IDL」を選択し、「Export」をクリックして、生成されたjsonファイルを「solpg」フォルダにドロップします。
 
 その後、`api/src/service.ts`または`tests/nft-marketplace.ts`内の必要なコードのコメントを解除してください。
